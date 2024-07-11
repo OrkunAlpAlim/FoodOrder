@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FoodService } from './services/food/food.service';
+import { CardComponent } from './card/card.component';
 
 
 
@@ -13,7 +14,8 @@ import { FoodService } from './services/food/food.service';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
