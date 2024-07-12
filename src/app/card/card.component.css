@@ -1,0 +1,161 @@
+@font-face {
+    font-family: "Grotesque";
+    src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Regular.eot"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Regular.ttf"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Regular.woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Grotesque Black";
+    src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Black.eot"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Black.ttf"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Black.woff");
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #152536;
+}
+
+.note {
+    margin-top: 30px;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Merriweather', sans-serif;
+    line-height: 1.5;
+    text-align: center;
+}
+
+article.card {
+    left: 50%;
+    top: 50%;
+    width: auto;
+    height: 350px;
+    transform: translate(-50%, -50%) translateZ(0);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+    overflow: hidden;
+}
+
+article.card .thumb {
+    width: auto;
+    height: 260px;
+    border-radius: 3px;
+}
+
+article.card .thumb img {
+    width: 100%;
+    height: auto;
+}
+
+article.card .infos {
+    width: auto;
+    height: 350px;
+    position: relative;
+    padding: 14px 24px;
+    background: #fff;
+    transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+
+article.card .infos .left-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+article.card .infos .right-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+article.card .infos .title {
+    margin: 10px 0;
+    letter-spacing: 3px;
+    color: #152536;
+    font-family: 'Grotesque Black', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 0px #32577f;
+}
+
+article.card .infos .addToCard {
+    text-decoration: none;
+    color: #d8276c;
+    text-shadow: 2px 2px 2px #070c11;
+    padding-bottom: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+article.card .infos .addToCard:hover {
+    color: #4e958b;
+}
+
+article.card .infos .category,
+article.card .infos .country {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: rgba(21, 37, 54, .7);
+    font-family: 'Grotesque', sans-serif;
+}
+
+article.card .infos .country {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    opacity: 0;
+    transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+
+article.card .infos .txt {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
+    font-family: 'Merriweather', sans-serif;
+    line-height: 2;
+    font-size: 0.95rem;
+    color: rgba(21, 37, 54, .7);
+    opacity: 0;
+    transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+article.card .infos .details {
+    position: absolute;
+    bottom: 0;
+    padding: 20px 24px;
+    letter-spacing: 1px;
+    color: #4e958b;
+    font-family: 'Grotesque Black', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+
+article.card:hover .infos {
+    transform: translateY(-260px);
+}
+
+article.card:hover .infos .country,
+article.card:hover .infos .txt,
+article.card:hover .infos .details {
+    opacity: 1;
+}
