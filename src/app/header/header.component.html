@@ -1,23 +1,23 @@
 <header>
-    <div class="container">
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="javascript:void(0)">Fol Food</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="mynavbar">
-                <ul class="navbar-nav me-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">My Cart</a>
-                  </li>
-                </ul>
-                <form class="d-flex">
-                  <input class="form-control me-4" type="text" placeholder="Caesar Salad, Tomato Soup etc.">
-                  <button class="btn btn-primary" type="button">Search</button>
-                </form>
-              </div>
+  <div class="container">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="javascript:void(0)">Fol Food</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">My Cart</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-4" type="text" placeholder="Caesar Salad, Tomato Soup etc." [(ngModel)]="searchQuery" [ngModelOptions]="ngModelOptions">
+                <button (click)="search()" class="btn btn-primary" type="button">Search</button>
+              </form>
             </div>
-          </nav>
-    </div>
+          </div>
+        </nav>
+  </div>
 </header>
