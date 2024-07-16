@@ -6,6 +6,7 @@ import { FoodService } from '../services/food/food.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
+
 export class CardComponent implements OnInit {
   foods: any[] = [];
 
