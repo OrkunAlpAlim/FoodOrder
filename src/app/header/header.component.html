@@ -2,7 +2,7 @@
   <div class="container">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="javascript:void(0)">Fol Food</a>
+        <a class="navbar-brand" href="javascript:void(0)" (click)="exit();">Fol Food</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,13 +36,15 @@
           <div class="left-section">
             <h3>By Category;</h3>
             <div *ngFor="let listItem1 of list1">
-              <button type="button" class="list-group-item list-group-item-action">{{ listItem1.strCategory}}</button>
+              <button (click)="filter1(listItem1.strCategory)" type="button"
+                class="list-group-item list-group-item-action">{{ listItem1.strCategory}}</button>
             </div>
           </div>
           <div class="right-section">
             <h3>By Area;</h3>
             <div *ngFor="let listItem2 of list2">
-              <button type="button" class="list-group-item list-group-item-action">{{ listItem2.strArea}}</button>
+              <button (click)="filter2(listItem2.strArea)" type="button"
+                class="list-group-item list-group-item-action">{{ listItem2.strArea}}</button>
             </div>
           </div>
         </div>

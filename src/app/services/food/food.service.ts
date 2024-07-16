@@ -10,9 +10,9 @@ export class FoodService {
   private apiUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
   private foodList1 = "https://www.themealdb.com/api/json/v1/1/list.php?c=list";
   private foodList2 = "https://www.themealdb.com/api/json/v1/1/list.php?a=list";
-  private filterList1 = "www.themealdb.com/api/json/v1/1/filter.php?c=";
-  private searchResults = new Subject<any[]>();
-  private filterResults = new Subject<any[]>();
+  private filterList1 = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
+  private filterList2 = "https://www.themealdb.com/api/json/v1/1/filter.php?a=";
+  private results = new Subject<any[]>();
 
   constructor(private http: HttpClient) { }
 
@@ -25,11 +25,11 @@ export class FoodService {
   }
 
   updateSearchResults(results: any[]) {
-    this.searchResults.next(results);
+    this.results.next(results);
   }
 
   getSearchResultsObservable(): Observable<any[]> {
-    return this.searchResults.asObservable();
+    return this.results.asObservable();
   }
 
   getFoodList1(): Observable<any> {
@@ -38,5 +38,32 @@ export class FoodService {
 
   getFoodList2(): Observable<any> {
     return this.http.get<any>(this.foodList2);
+  }
+
+
+
+  getFilter1Results(category: string): Observable<any> {
+    return this.http.get<any>(`${this.filterList1}${category}`);
+  }
+
+  updateFilter1Results(results: any[]) {
+    this.results.next(results);
+  }
+
+  getFilter1ResultsObservable(): Observable<any[]> {
+    return this.results.asObservable();
+  }
+
+
+  getFilter2Results(area: string): Observable<any> {
+    return this.http.get<any>(`${this.filterList2}${area}`);
+  }
+
+  updateFilter2Results(results: any[]) {
+    this.results.next(results);
+  }
+
+  getFilter2ResultsObservable(): Observable<any[]> {
+    return this.results.asObservable();
   }
 }
