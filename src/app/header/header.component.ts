@@ -23,7 +23,6 @@ export class HeaderComponent {
       this.list1 = data1.meals;
     });
     this.foodService.getFoodList2().subscribe(data2 => {
-      console.log(data2);
       this.list2 = data2.meals;
     });
   }
