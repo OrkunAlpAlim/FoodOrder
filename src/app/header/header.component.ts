@@ -13,7 +13,6 @@ export class HeaderComponent {
   filterQuery: string = '';
   list1: any[] = [];
   list2: any[] = [];
-  public sidebarShow: boolean = true;
 
   ngModelOptions: { standalone: true } = { standalone: true };
 

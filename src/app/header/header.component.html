@@ -2,46 +2,49 @@
   <div class="container">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="javascript:void(0)" (click)="exit();">Fol Food</a>
+        <a class="navbar-brand fs-4 fw-bold" href="#" (click)="exit();">Fol Food</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mynavbar">
           <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">My Cart</a>
-            </li>
           </ul>
           <form class="d-flex">
             <input (keyup.enter)="search()" class="form-control me-2" type="text"
               placeholder="Caesar Salad, Tomato Soup etc." [(ngModel)]="searchQuery" [ngModelOptions]="ngModelOptions">
             <button (click)="search()" class="btn btn-primary me-2" type="button">Search</button>
-            <button class="btn btn-primary me-2 sidebar-opener" (click)="sidebarShow = !sidebarShow"><svg
-                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter"
-                viewBox="0 0 16 16">
+            <button class="btn btn-primary me-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
                 <path
                   d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+              </svg></button>
+            <button class="btn btn-success me-2 sidebar-opener"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                <path
+                  d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
               </svg></button>
           </form>
         </div>
       </div>
     </nav>
-    <div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
-      <div class="sidebar-close" (click)="sidebarShow = !sidebarShow">
-        X
+    <div class="offcanvas offcanvas-end text-dark" tabindex="-1" id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel" class="fs-4 fw-bold mt-2">Food Filter</h5>
+        <button type="button" class="btn-close text-reset me-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="sidebar-content bg-dark">
-        <h2>Food Filter</h2>
+      <div class="offcanvas-body">
         <div class="filterContainer">
           <div class="left-section">
-            <h3>By Category;</h3>
+            <h3 class="fs-6 fw-bold">By Category;</h3>
             <div *ngFor="let listItem1 of list1">
               <button (click)="filter1(listItem1.strCategory)" type="button"
                 class="list-group-item list-group-item-action">{{ listItem1.strCategory}}</button>
             </div>
           </div>
           <div class="right-section">
-            <h3>By Area;</h3>
+            <h3 class="fs-6 fw-bold">By Area;</h3>
             <div *ngFor="let listItem2 of list2">
               <button (click)="filter2(listItem2.strArea)" type="button"
                 class="list-group-item list-group-item-action">{{ listItem2.strArea}}</button>
