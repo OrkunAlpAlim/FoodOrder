@@ -13,7 +13,8 @@
                 </li>
               </ul>
               <form class="d-flex">
-                <input class="form-control me-4" type="text" placeholder="Caesar Salad, Tomato Soup etc." [(ngModel)]="searchQuery" [ngModelOptions]="ngModelOptions">
+                <input 
+                (keyup.enter)="search()" class="form-control me-4" type="text" placeholder="Caesar Salad, Tomato Soup etc." [(ngModel)]="searchQuery" [ngModelOptions]="ngModelOptions">
                 <button (click)="search()" class="btn btn-primary" type="button">Search</button>
               </form>
             </div>
