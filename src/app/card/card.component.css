@@ -55,6 +55,29 @@ article.card .thumb img {
     height: auto;
 }
 
+.right-info {
+    grid-area: right;
+
+}
+
+.left-info {
+    grid-area: left;
+
+}
+
+.bottom-info {
+    grid-area: bottom;
+}
+
+.right-info,
+.left-info,
+.bottom-info {
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+
+
 article.card .infos {
     width: auto;
     height: 350px;
@@ -62,6 +85,12 @@ article.card .infos {
     padding: 14px 24px;
     background: #fff;
     transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+    display: grid;
+    grid-template-areas:
+        'left right'
+        'bottom bottom';
+    gap: 10px;
+    padding: 10px;
 }
 
 article.card .infos .left-info {
@@ -122,7 +151,7 @@ article.card .infos .country {
 article.card .infos .txt {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 5;
     line-clamp: 4;
     overflow: hidden;
     font-family: 'Merriweather', sans-serif;
