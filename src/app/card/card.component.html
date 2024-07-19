@@ -1,7 +1,8 @@
 <div class="container pt-3">
     <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-12 mb-3" *ngFor="let food of foods">
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content" *ngIf="selectedFood">
                         <div class="modal-header">
@@ -9,8 +10,10 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img [src]="selectedFood.strMealThumb" class="card-img-top border-bottom" alt="{{ selectedFood.strMeal }}">
-                            <h3 class="category" style="font-size: 16pt;">Category: {{ selectedFood.strCategory }}<br>Area: {{ selectedFood.strArea }}</h3>
+                            <img [src]="selectedFood.strMealThumb" class="card-img-top border-bottom"
+                                alt="{{ selectedFood.strMeal }}">
+                            <h3 class="category" style="font-size: 16pt;">Category: {{ selectedFood.strCategory
+                                }}<br>Area: {{ selectedFood.strArea }}</h3>
                             <p class="txt" style="font-size: 12pt;">Info;<br>{{ selectedFood.strInstructions }}</p>
                         </div>
                         <div class="modal-footer">
@@ -32,7 +35,8 @@
                     </div>
                     <div class="bottom-info">
                         <p class="txt">{{ food.strInstructions }}</p>
-                        <h3 (click)="getFoodDetails(food.idMeal)" class="details" data-bs-toggle="modal" data-bs-target="#exampleModal">Food details</h3>
+                        <h3 (click)="getFoodDetails(food.idMeal)" class="details" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Food details</h3>
                     </div>
                 </div>
             </article>

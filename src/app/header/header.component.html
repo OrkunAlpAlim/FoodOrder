@@ -19,9 +19,9 @@
                 <path
                   d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
               </svg></button>
-            <button class="btn btn-success me-2 sidebar-opener" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
-            aria-controls="offcanvasCart"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+            <button class="btn btn-success me-2 sidebar-opener" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasCart" aria-controls="offcanvasCart"><svg xmlns="http://www.w3.org/2000/svg"
+                width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                 <path
                   d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
               </svg></button>
@@ -59,8 +59,8 @@
       </div>
     </div>
 
-
-
+    
+<!--CART BAR-->
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
@@ -68,14 +68,71 @@
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <ul>
-          <li>item1</li>
-          <li>item2</li>
-          <li>item3</li>
-        </ul>
+        <section class="pt-5 pb-5">
+          <div class="container">
+            <div class="row w-100">
+              <div class="col-lg-12 col-md-12 col-12">
+                <p class="mb-5 text-center">
+                <table id="shoppingCart" class="table table-condensed table-responsive">
+                  <thead>
+                    <tr>
+                      <th style="width:60%">Product</th>
+                      <th style="width:10%">Quantity</th>
+                      <th style="width:16%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-th="Product">
+                        <div class="row">
+                          <div class="col-md-10 text-left">
+                            <img
+                              src="https://img.freepik.com/free-photo/side-view-shawarma-with-fried-potatoes-board-cookware_176474-3215.jpg?t=st=1721378199~exp=1721381799~hmac=369d4760d85266216c7d52028cbb5386a8f6a6aca5a9d5935d2200e936f204ea&w=826"
+                              alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow">
+                          </div>
+                          <div class="col-md-9 text-left mt-sm-2">
+                            <h6>Product Name</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-th="Quantity">
+                        <input type="number" class="form-control form-control-sm rounded text-center" value="1">
+                      </td>
+                      <td class="actions" data-th="">
+                        <div class="text-right">
+                          <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                              <path
+                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                              <path fill-rule="evenodd"
+                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                            </svg>
+                          </button>
+                          <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-trash" viewBox="0 0 16 16">
+                              <path
+                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                              <path
+                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                            </svg>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row mt-4 d-flex align-items-center">
+              <div class="col-sm-6 order-md-2 text-right">
+                <a href="catalog.html" class="btn btn-success mb-4 btn-lg pl-5 pr-5">Order</a>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-
-
   </div>
 </header>
