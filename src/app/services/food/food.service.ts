@@ -66,4 +66,8 @@ export class FoodService {
   getFilter2ResultsObservable(): Observable<any[]> {
     return this.results.asObservable();
   }
+
+  getFoodDetails(id: any): Observable<any> {
+    return this.http.get<any>(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+  }
 }
