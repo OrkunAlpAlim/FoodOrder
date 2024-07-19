@@ -49,4 +49,11 @@ export class CartService {
       this.cartItemsSubject.next(items);
     }
   }
+
+  removeAllFromCart() {
+    if (this.isBrowser) {
+      localStorage.removeItem(this.cartKey);
+      this.cartItemsSubject.next([]);
+    }
+  }
 }

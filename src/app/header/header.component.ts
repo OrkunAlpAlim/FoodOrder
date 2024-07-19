@@ -60,4 +60,8 @@ export class HeaderComponent implements OnInit {
       this.foodService.updateFilter2Results(results.meals);
     });
   }
+
+  showPopup(message:string): void {
+    window.alert(message);
+  }
 }

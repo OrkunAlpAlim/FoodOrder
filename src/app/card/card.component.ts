@@ -11,6 +11,7 @@ import { CartService } from '../services/cart/cart.service';
 export class CardComponent implements OnInit {
   foods: any[] = [];
   selectedFood: any = null;
+example: any;
 
   constructor(private foodService: FoodService, private cartService: CartService, private http: HttpClient) { }
 
@@ -32,5 +33,9 @@ export class CardComponent implements OnInit {
 
   addToCart(food: any): void {
     this.cartService.addToCart(food);
+  }
+
+  showPopup(message:string): void {
+    window.alert(message);
   }
 }

@@ -17,7 +17,7 @@
                             <p class="txt" style="font-size: 12pt;">Info;<br>{{ selectedFood.strInstructions }}</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-success" (click)="addToCart(selectedFood)">Add to
+                            <button type="button" class="btn btn-success" (click)="addToCart(selectedFood); showPopup('The food added to cart!')">Add to
                                 cart</button>
                         </div>
                     </div>
