@@ -29,10 +29,6 @@
         </div>
       </div>
     </nav>
-
-
-
-
     <div class="offcanvas offcanvas-end text-dark" tabindex="-1" id="offcanvasFilter"
       aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
@@ -58,10 +54,6 @@
         </div>
       </div>
     </div>
-
-    
-<!--CART BAR-->
-
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
         <h5 id="offcanvasRightLabel" class="fs-4 fw-bold mt-2">My Cart</h5>
@@ -82,16 +74,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr *ngFor="let item of cartItems; let i = index">
                       <td data-th="Product">
                         <div class="row">
                           <div class="col-md-10 text-left">
-                            <img
-                              src="https://img.freepik.com/free-photo/side-view-shawarma-with-fried-potatoes-board-cookware_176474-3215.jpg?t=st=1721378199~exp=1721381799~hmac=369d4760d85266216c7d52028cbb5386a8f6a6aca5a9d5935d2200e936f204ea&w=826"
-                              alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow">
+                            <img [src]="item.strMealThumb" alt=""
+                              class="img-fluid d-none d-md-block rounded mb-2 shadow">
                           </div>
                           <div class="col-md-9 text-left mt-sm-2">
-                            <h6>Product Name</h6>
+                            <h6>{{ item.strMeal }}</h6>
                           </div>
                         </div>
                       </td>
@@ -100,16 +91,8 @@
                       </td>
                       <td class="actions" data-th="">
                         <div class="text-right">
-                          <button class="btn btn-white border-secondary bg-white btn-md mb-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                              class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                              <path
-                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
-                              <path fill-rule="evenodd"
-                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
-                            </svg>
-                          </button>
-                          <button class="btn btn-white border-secondary bg-white btn-md mb-2">
+                          <button class="btn btn-white border-secondary bg-white btn-md mb-2"
+                            (click)="cartService.removeFromCart(i)">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                               class="bi bi-trash" viewBox="0 0 16 16">
                               <path
