@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable({
@@ -40,8 +40,6 @@ export class FoodService {
     return this.http.get<any>(this.foodList2);
   }
 
-
-
   getFilter1Results(category: string): Observable<any> {
     return this.http.get<any>(`${this.filterList1}${category}`);
   }
@@ -53,7 +51,6 @@ export class FoodService {
   getFilter1ResultsObservable(): Observable<any[]> {
     return this.results.asObservable();
   }
-
 
   getFilter2Results(area: string): Observable<any> {
     return this.http.get<any>(`${this.filterList2}${area}`);
@@ -68,6 +65,9 @@ export class FoodService {
   }
 
   getFoodDetails(id: any): Observable<any> {
-    return this.http.get<any>(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+    debugger;
+    const params = new HttpParams().set('i', id);
+    return this.http.get<any>("https://www.themealdb.com/api/json/v1/1/lookup.php", { params: params });
   }
+  
 }
